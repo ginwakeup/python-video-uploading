@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package grpc_video.service;
+
+import "grpc_video/data.proto";
+import "grpc_video/response.proto";
+
+
+service VideoUpload {
+        rpc Upload(stream data.Chunk) returns (response.UploadStatus) {}
+}
