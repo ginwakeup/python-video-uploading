@@ -1,6 +1,8 @@
 import grpc
 import cv2
 import pickle
+import numpy as np
+import base64
 
 from gunner.grpc_video import service_pb2_grpc, data_pb2
 
@@ -16,12 +18,12 @@ while(cap.isOpened()):
     if frame is None:
         break
 
-    frame = pickle.dumps(frame)
+    np.savez("original.npz", image=frame)
+    image = cv2.imencode(".jpg", frame)
+    image = image[1].tobytes()
+    bi64 = base64.b64encode(image)
 
-    #frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-
-
-    response = stub.Upload(iter((data_pb2.Chunk(data=frame),)))
+    response = stub.Upload(iter((data_pb2.Chunk(data=bi64),)))
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

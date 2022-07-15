@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15grpc_video/data.proto\x12\x0fgrpc_video.data\"\x15\n\x05\x43hunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15grpc_video/data.proto\x12\x0fgrpc_video.data\"\x15\n\x05\x43hunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\tb\x06proto3')
 
 
 

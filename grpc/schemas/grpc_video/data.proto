@@ -4,5 +4,5 @@ package grpc_video.data;
 
 
 message Chunk {
-    bytes data = 1;
+    string data = 1;
 }
