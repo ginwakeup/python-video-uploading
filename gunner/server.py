@@ -13,6 +13,7 @@ class VideoUploadServer(service_pb2_grpc.VideoUploadServicer):
     def __init__(self):
         if not os.path.exists("output"):
             os.makedirs("output", exist_ok=True)
+
         self._count = 0
 
     def Upload(self, request_iterator, context):
