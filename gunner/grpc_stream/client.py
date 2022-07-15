@@ -12,14 +12,11 @@ requests = []
 
 
 def send_frame(frame, count):
-    print(count)
     image = cv2.imencode(".jpg", frame)
     image = image[1].tobytes()
     bi64 = base64.b64encode(image)
 
     requests.append(data_pb2.Chunk(data=bi64),)
-
-
 
 
 if __name__ == '__main__':
