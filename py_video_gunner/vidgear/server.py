@@ -29,4 +29,5 @@ def start_netgear_server(video_to_send:str):
 if __name__ == "__main__":
     import os
 
-    start_netgear_server(os.path.join(os.path.dirname(__file__), "test_video.mp4"))
+    test_video = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resources", "test_video.mp4")
+    start_netgear_server()

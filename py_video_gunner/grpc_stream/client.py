@@ -170,13 +170,13 @@ def upload_video(executor: ThreadPoolExecutor, channel: grpc.Channel, video_url:
 
 
 if __name__ == '__main__':
-    video_url = os.path.join(os.path.dirname(os.path.dirname(__file__)), "test_video.mp4")
+    test_video = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resources", "test_video.mp4")
 
     logging.info("Initializing Thread Pool Executor")
     executor = ThreadPoolExecutor()
 
     with grpc.insecure_channel("localhost:50051") as channel:
         logging.info("Opened gRPC channel.")
-        future = executor.submit(upload_video, executor, channel, video_url, UploadMode.BIDIR)
+        future = executor.submit(upload_video, executor, channel, test_video, UploadMode.BIDIR)
         logging.info("Submitted upload thread execution.")
         future.result()
