@@ -31,6 +31,10 @@ class VideoUploadServer(service_pb2_grpc.VideoUploadServicer):
         self._count = 0
         self._upload_status = response_pb2.UNKNOWN
 
+    @property
+    def upload_status(self):
+        return self._upload_status
+
     def _frame_to_file(self, frame: bytes):
         """Saves frame bytes to a file.
         The file naming is incremental, and they can be found in grc_stream/output folder.

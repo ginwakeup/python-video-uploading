@@ -5,6 +5,8 @@ py_video_gunner is an experimental repository to try various video upload and st
 ## Contained Experiments and Examples
 
 ### gRPC
+`py_video_gunner/grpc_stream`
+
 The first example is written using opencv and gRPC.
 
 gRPC is used to define a client and a server which communicate in unidirectional or bidirectional streaming to upload a video.
@@ -17,6 +19,8 @@ gRPC is used to define a client and a server which communicate in unidirectional
 
 
 ### VidGear
+`py_video_gunner/vidgear`
+
 VidGear is a High-Performance Video Processing Python Library.
 https://github.com/abhiTronix/vidgear
 

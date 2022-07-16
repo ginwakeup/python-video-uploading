@@ -169,7 +169,7 @@ def upload_video(executor: ThreadPoolExecutor, channel: grpc.Channel, video_url:
         video_uploader.upload()
 
 
-if __name__ == '__main__':
+def run_client():
     test_video = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resources", "test_video.mp4")
 
     logging.info("Initializing Thread Pool Executor")
@@ -180,3 +180,7 @@ if __name__ == '__main__':
         future = executor.submit(upload_video, executor, channel, test_video, UploadMode.BIDIR)
         logging.info("Submitted upload thread execution.")
         future.result()
+
+
+if __name__ == '__main__':
+    run_client()

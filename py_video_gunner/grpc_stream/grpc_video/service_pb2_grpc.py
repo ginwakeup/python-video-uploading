@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from grpc_video import data_pb2 as grpc__video_dot_data__pb2
-from grpc_video import response_pb2 as grpc__video_dot_response__pb2
+from py_video_gunner.grpc_stream.grpc_video import data_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2
+from py_video_gunner.grpc_stream.grpc_video import response_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2
 
 
 class VideoUploadStub(object):
@@ -16,14 +16,14 @@ class VideoUploadStub(object):
             channel: A grpc.Channel.
         """
         self.Upload = channel.stream_unary(
-                '/grpc_video.service.VideoUpload/Upload',
-                request_serializer=grpc__video_dot_data__pb2.Chunk.SerializeToString,
-                response_deserializer=grpc__video_dot_response__pb2.UploadStatus.FromString,
+                '/py_video_gunner.grpc_stream.grpc_video.service.VideoUpload/Upload',
+                request_serializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.SerializeToString,
+                response_deserializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.FromString,
                 )
         self.UploadBi = channel.stream_stream(
-                '/grpc_video.service.VideoUpload/UploadBi',
-                request_serializer=grpc__video_dot_data__pb2.Chunk.SerializeToString,
-                response_deserializer=grpc__video_dot_response__pb2.UploadStatus.FromString,
+                '/py_video_gunner.grpc_stream.grpc_video.service.VideoUpload/UploadBi',
+                request_serializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.SerializeToString,
+                response_deserializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.FromString,
                 )
 
 
@@ -47,17 +47,17 @@ def add_VideoUploadServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Upload': grpc.stream_unary_rpc_method_handler(
                     servicer.Upload,
-                    request_deserializer=grpc__video_dot_data__pb2.Chunk.FromString,
-                    response_serializer=grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
+                    request_deserializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.FromString,
+                    response_serializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
             ),
             'UploadBi': grpc.stream_stream_rpc_method_handler(
                     servicer.UploadBi,
-                    request_deserializer=grpc__video_dot_data__pb2.Chunk.FromString,
-                    response_serializer=grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
+                    request_deserializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.FromString,
+                    response_serializer=py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'grpc_video.service.VideoUpload', rpc_method_handlers)
+            'py_video_gunner.grpc_stream.grpc_video.service.VideoUpload', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -76,9 +76,9 @@ class VideoUpload(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/grpc_video.service.VideoUpload/Upload',
-            grpc__video_dot_data__pb2.Chunk.SerializeToString,
-            grpc__video_dot_response__pb2.UploadStatus.FromString,
+        return grpc.experimental.stream_unary(request_iterator, target, '/py_video_gunner.grpc_stream.grpc_video.service.VideoUpload/Upload',
+            py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.SerializeToString,
+            py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -93,8 +93,8 @@ class VideoUpload(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/grpc_video.service.VideoUpload/UploadBi',
-            grpc__video_dot_data__pb2.Chunk.SerializeToString,
-            grpc__video_dot_response__pb2.UploadStatus.FromString,
+        return grpc.experimental.stream_stream(request_iterator, target, '/py_video_gunner.grpc_stream.grpc_video.service.VideoUpload/UploadBi',
+            py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2.Chunk.SerializeToString,
+            py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2.UploadStatus.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

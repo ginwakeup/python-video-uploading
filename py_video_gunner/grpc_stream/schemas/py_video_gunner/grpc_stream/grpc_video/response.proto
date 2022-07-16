@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package grpc_video.response;
+package py_video_gunner.grpc_stream.grpc_video.response;
 
 
 enum UploadStatusCode {
