@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  run-unittests:
 
     runs-on: ubuntu-latest
 
