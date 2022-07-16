@@ -1,0 +1,3 @@
+opencv-python
+grpcio
+grpcio-tools

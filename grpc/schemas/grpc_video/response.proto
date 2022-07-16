@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package grpc_video.response;
+
+
+enum UploadStatusCode {
+        UNKNOWN = 0;
+        OK = 1;
+        FAILED = 2;
+}
+
+message UploadStatus {
+        string message = 1;
+        UploadStatusCode code = 2;
+}

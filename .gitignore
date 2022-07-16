@@ -5,6 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
+.idea
+.DS_Store
+
+output/
 
 # Distribution / packaging
 .Python
@@ -127,3 +131,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+gunner/netgear/test_video.mp4
