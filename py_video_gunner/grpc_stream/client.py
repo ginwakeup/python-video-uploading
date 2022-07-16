@@ -13,8 +13,8 @@ from typing import Iterator
 
 import numpy as np
 
-from gunner.grpc_stream.grpc_video import service_pb2_grpc, data_pb2, response_pb2
-from gunner.grpc_stream import exceptions
+from py_video_gunner.grpc_stream.grpc_video import service_pb2_grpc, data_pb2, response_pb2
+from py_video_gunner.grpc_stream import exceptions
 
 
 logging.basicConfig(level=logging.INFO)
