@@ -6,7 +6,7 @@ import base64
 
 from concurrent import futures
 
-from gunner.grpc_video import service_pb2_grpc, response_pb2
+from gunner.grpc_stream.grpc_video import service_pb2_grpc, response_pb2
 
 
 class VideoUploadServer(service_pb2_grpc.VideoUploadServicer):
@@ -16,21 +16,26 @@ class VideoUploadServer(service_pb2_grpc.VideoUploadServicer):
 
         self._count = 0
 
+    def _frame_to_file(self, frame: bytes):
+        b64e = base64.b64decode(frame)
+
+        image = np.asarray(bytearray(b64e), dtype="uint8")
+        image = cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
+
+        cv2.imwrite(f"output/output_{self._count}.jpg", image)
+        self._count += 1
+
     def Upload(self, request_iterator, context):
         for request in request_iterator:
-            b64e = base64.b64decode(request.data)
-
-            image = np.asarray(bytearray(b64e), dtype="uint8")
-            image = cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
-
-            cv2.imwrite(f"output/output_{self._count}.jpg", image)
-            self._count += 1
-
-            if cv2.waitKey(25) & 0xFF == ord('q'):
-                break
+            self._frame_to_file(request.data)
 
         response = response_pb2.UploadStatus(message="", code=response_pb2.OK)
         return response
+
+    def UploadBi(self, request_iterator, context):
+        for request in request_iterator:
+            self._frame_to_file(request.data)
+            yield response_pb2.UploadStatus(message="", code=response_pb2.OK)
 
 
 def serve():

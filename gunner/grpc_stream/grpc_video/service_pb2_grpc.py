@@ -20,6 +20,11 @@ class VideoUploadStub(object):
                 request_serializer=grpc__video_dot_data__pb2.Chunk.SerializeToString,
                 response_deserializer=grpc__video_dot_response__pb2.UploadStatus.FromString,
                 )
+        self.UploadBi = channel.stream_stream(
+                '/grpc_video.service.VideoUpload/UploadBi',
+                request_serializer=grpc__video_dot_data__pb2.Chunk.SerializeToString,
+                response_deserializer=grpc__video_dot_response__pb2.UploadStatus.FromString,
+                )
 
 
 class VideoUploadServicer(object):
@@ -31,11 +36,22 @@ class VideoUploadServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UploadBi(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VideoUploadServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Upload': grpc.stream_unary_rpc_method_handler(
                     servicer.Upload,
+                    request_deserializer=grpc__video_dot_data__pb2.Chunk.FromString,
+                    response_serializer=grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
+            ),
+            'UploadBi': grpc.stream_stream_rpc_method_handler(
+                    servicer.UploadBi,
                     request_deserializer=grpc__video_dot_data__pb2.Chunk.FromString,
                     response_serializer=grpc__video_dot_response__pb2.UploadStatus.SerializeToString,
             ),
@@ -61,6 +77,23 @@ class VideoUpload(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.stream_unary(request_iterator, target, '/grpc_video.service.VideoUpload/Upload',
+            grpc__video_dot_data__pb2.Chunk.SerializeToString,
+            grpc__video_dot_response__pb2.UploadStatus.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UploadBi(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(request_iterator, target, '/grpc_video.service.VideoUpload/UploadBi',
             grpc__video_dot_data__pb2.Chunk.SerializeToString,
             grpc__video_dot_response__pb2.UploadStatus.FromString,
             options, channel_credentials,

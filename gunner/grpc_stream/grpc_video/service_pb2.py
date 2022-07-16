@@ -16,7 +16,7 @@ from grpc_video import data_pb2 as grpc__video_dot_data__pb2
 from grpc_video import response_pb2 as grpc__video_dot_response__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18grpc_video/service.proto\x12\x12grpc_video.service\x1a\x15grpc_video/data.proto\x1a\x19grpc_video/response.proto2V\n\x0bVideoUpload\x12G\n\x06Upload\x12\x16.grpc_video.data.Chunk\x1a!.grpc_video.response.UploadStatus\"\x00(\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18grpc_video/service.proto\x12\x12grpc_video.service\x1a\x15grpc_video/data.proto\x1a\x19grpc_video/response.proto2\xa3\x01\n\x0bVideoUpload\x12G\n\x06Upload\x12\x16.grpc_video.data.Chunk\x1a!.grpc_video.response.UploadStatus\"\x00(\x01\x12K\n\x08UploadBi\x12\x16.grpc_video.data.Chunk\x1a!.grpc_video.response.UploadStatus\"\x00(\x01\x30\x01\x62\x06proto3')
 
 
 
@@ -24,6 +24,6 @@ _VIDEOUPLOAD = DESCRIPTOR.services_by_name['VideoUpload']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _VIDEOUPLOAD._serialized_start=98
-  _VIDEOUPLOAD._serialized_end=184
+  _VIDEOUPLOAD._serialized_start=99
+  _VIDEOUPLOAD._serialized_end=262
 # @@protoc_insertion_point(module_scope)

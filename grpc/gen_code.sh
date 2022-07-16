@@ -3,8 +3,8 @@
 
 python -m grpc_tools.protoc\
  -I$PWD/schemas\
- --python_out=../gunner\
+ --python_out=../gunner/grpc_stream\
  $PWD/schemas/grpc_video/*.proto\
- --grpc_python_out=../gunner/
+ --grpc_python_out=../gunner/grpc_stream/
 
-echo "" > ../gunner/grpc_video/__init__.py
+echo "" > ../gunner/grpc_stream/grpc_video/__init__.py
