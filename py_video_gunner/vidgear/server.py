@@ -30,4 +30,4 @@ if __name__ == "__main__":
     import os
 
     test_video = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resources", "test_video.mp4")
-    start_netgear_server()
+    start_netgear_server(test_video)
