@@ -8,4 +8,4 @@ To run it:
   - I couldn't make this work with `localhost` for some reason. 
 - Run `server.py`
 - Run `client.py`
-- `py_video_gunner/Output.mp4` will be generated.
+- `py_video_upload/Output.mp4` will be generated.
