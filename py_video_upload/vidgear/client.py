@@ -6,7 +6,7 @@ from vidgear.gears import WriteGear
 
 
 client = NetGear_Async(
-    address="192.168.0.12",  # Replace with your IP.
+    address="192.168.0.12",  # Replace this with your IP.
     port="8081",
     protocol="tcp",
     pattern=1,
