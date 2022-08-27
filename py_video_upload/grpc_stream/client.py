@@ -1,20 +1,20 @@
 """This module shows a client example for the gRPC video upload server.
 UploadMode is used to pickup what service to use (stream to stream or stream to response).
 """
-import grpc
-import cv2
 import base64
-import threading
-import os
 import logging
-
-from concurrent.futures import ThreadPoolExecutor
-from typing import Iterator
+import os
+import threading
 
 import numpy as np
+import grpc
+import cv2
 
 from py_video_upload.grpc_stream.grpc_video import service_pb2_grpc, data_pb2, response_pb2
 from py_video_upload.grpc_stream import exceptions
+
+from concurrent.futures import ThreadPoolExecutor
+from typing import Iterator
 
 
 logging.basicConfig(level=logging.INFO)
