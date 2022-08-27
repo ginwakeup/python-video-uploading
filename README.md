@@ -1,4 +1,4 @@
-# Python Examples for Video Uploading through the Network
+# R&D for Video Uploading using Python
 
 This is an experimental repository to try various video upload and streaming methods.
 
