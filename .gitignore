@@ -131,4 +131,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-py_video_gunner/netgear/test_video.mp4
+py_video_upload/netgear/test_video.mp4

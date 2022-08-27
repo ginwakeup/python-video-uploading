@@ -12,8 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from py_video_gunner.grpc_stream.grpc_video import data_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2
-from py_video_gunner.grpc_stream.grpc_video import response_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2
+from py_video_upload.grpc_stream.grpc_video import data_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2
+from py_video_upload.grpc_stream.grpc_video import response_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4py_video_gunner/grpc_stream/grpc_video/service.proto\x12.py_video_gunner.grpc_stream.grpc_video.service\x1a\x31py_video_gunner/grpc_stream/grpc_video/data.proto\x1a\x35py_video_gunner/grpc_stream/grpc_video/response.proto2\x94\x02\n\x0bVideoUpload\x12\x7f\n\x06Upload\x12\x32.py_video_gunner.grpc_stream.grpc_video.data.Chunk\x1a=.py_video_gunner.grpc_stream.grpc_video.response.UploadStatus\"\x00(\x01\x12\x83\x01\n\x08UploadBi\x12\x32.py_video_gunner.grpc_stream.grpc_video.data.Chunk\x1a=.py_video_gunner.grpc_stream.grpc_video.response.UploadStatus\"\x00(\x01\x30\x01\x62\x06proto3')

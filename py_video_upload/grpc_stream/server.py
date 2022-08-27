@@ -17,7 +17,7 @@ import logging
 
 from concurrent import futures
 
-from py_video_gunner.grpc_stream.grpc_video import service_pb2_grpc, response_pb2
+from py_video_upload.grpc_stream.grpc_video import service_pb2_grpc, response_pb2
 
 logging.basicConfig(level=logging.INFO)
 

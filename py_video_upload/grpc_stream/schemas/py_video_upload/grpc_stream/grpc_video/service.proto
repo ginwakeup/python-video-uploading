@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package py_video_gunner.grpc_stream.grpc_video.service;
+package py_video_upload.grpc_stream.grpc_video.service;
 
-import "py_video_gunner/grpc_stream/grpc_video/data.proto";
-import "py_video_gunner/grpc_stream/grpc_video/response.proto";
+import "py_video_upload/grpc_stream/grpc_video/data.proto";
+import "py_video_upload/grpc_stream/grpc_video/response.proto";
 
 
 service VideoUpload {

@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from py_video_gunner.grpc_stream.grpc_video import data_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2
-from py_video_gunner.grpc_stream.grpc_video import response_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2
+from py_video_upload.grpc_stream.grpc_video import data_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_data__pb2
+from py_video_upload.grpc_stream.grpc_video import response_pb2 as py__video__gunner_dot_grpc__stream_dot_grpc__video_dot_response__pb2
 
 
 class VideoUploadStub(object):
