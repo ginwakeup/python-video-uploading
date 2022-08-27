@@ -1,11 +1,11 @@
-# py_video_gunner
+# Python Examples for Video Uploading through the Network
 
-py_video_gunner is an experimental repository to try various video upload and streaming methods.
+This is an experimental repository to try various video upload and streaming methods.
 
 ## Contained Experiments and Examples
 
 ### gRPC
-`py_video_gunner/grpc_stream`
+`py_video_upload/grpc_stream`
 
 The first example is written using opencv and gRPC.
 
@@ -19,7 +19,7 @@ gRPC is used to define a client and a server which communicate in unidirectional
 
 
 ### VidGear
-`py_video_gunner/vidgear`
+`py_video_upload/vidgear`
 
 VidGear is a High-Performance Video Processing Python Library.
 https://github.com/abhiTronix/vidgear
